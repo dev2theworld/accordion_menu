@@ -43,5 +43,52 @@ header h1 {
 }
 
 .tab:hover {
-  width: 450px;
+  width: 440px;
+}
+
+.tab .content {
+  background-color: #fff;
+  width: 360px;
+  height: 200px;
+  margin-left: 80px;
+  position: relative;
+  padding: 50px 0 0 15px;
+}
+
+.tab .content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.tab .content p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding-right: 30px;
+}
+
+.social a::before,
+.social a::after {
+  width: 80px;
+  height: 200px;
+  position: absolute;
+  text-indent: 0s;
+  display: block;
+  padding-top: 90px;
+  padding-left: 25px;
+  color: #fff;
+  background-color: #ff0000;
+}
+
+.youtube a::before,
+.youtube a::after {
+  font-family: "Font Awesome 5 Free";
+   content: "\f167";
+   display: inline-block;
+   padding-right: 3px;
+   vertical-align: middle;
+   font-weight: 900;
+}
+
+.youtube a:after {
+  background-color: #ff0000;
 }
