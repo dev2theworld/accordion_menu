@@ -105,7 +105,8 @@ w czerwone (oraz powiększenia ikony) w momencie hovera*/
 /*aby zmienić defaultowy kolor z czerwonego na szary - ustawiamy parametry powiększonej ikony i paddingów, odsuwamy margin-leftem całość na bok - w ten sposób defaultowo zostaje nam szary kolor tła i mniejsza ikona z wczesniejszej stylizacji*/
 .social a:after {
   padding-top: 80px;
-  padding-left: 12px;
+  padding-left: 18px;
+
   font-size: 3rem;
   /*margin jest potrzebny aby wypchnąć powiększona ikonę z czerwonym tłem poza obszar widzenia (bez niego będziemy na starcie widzieli czerwone tło z powiększoną ikoną), wprowadzimy ją następnie przy użyciu animacji*/
   margin-left: 85px;
@@ -119,4 +120,54 @@ w czerwone (oraz powiększenia ikony) w momencie hovera*/
 
 .youtube a:after {
   background-color: #ff0000;
+}
+
+.twitter a:before,
+.twitter a:after {
+   font-family: "Font Awesome 5 Brands";
+   content: "\f099";
+}
+
+.twitter a:after {
+  background-color: #6dc5dd;
+}
+
+.facebook a:before,
+.facebook a:after {
+   font-family: "Font Awesome 5 Brands";
+   content: "\f09a";
+}
+
+.facebook a:after {
+  background-color: #3d5598;
+}
+
+.linkedin a:before,
+.linkedin a:after {
+   font-family: "Font Awesome 5 Brands";
+   content: "\f08c";
+}
+
+.linkedin a:after {
+  background-color: #00a9cd;
+}
+
+.instagram a:before,
+.instagram a:after {
+   font-family: "Font Awesome 5 Brands";
+   content: "\f16d";
+}
+
+.instagram a:after {
+  background-color: #6dc993;
+}
+
+.github a:before,
+.github a:after {
+   font-family: "Font Awesome 5 Brands";
+   content: "\f09b";
+}
+
+.github a:after {
+  background-color: #6e5494;
 }
