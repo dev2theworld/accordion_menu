@@ -6,7 +6,15 @@
 
 body {
   background-color: #222;
+  font-family: Arial, Helvetica, sans-serif;
 }
+
+/*@font-face {
+  font-family: 'Font Awesome';
+  font-style: normal;
+  font-weight: normal;
+  src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css');
+}*/
 
 .container {
   margin: 50px auto;
@@ -46,6 +54,17 @@ header h1 {
   width: 440px;
 }
 
+/*bardzo ważne dla obu poniższych hoverów jest dodanie w .social a:before, .social a:after {transition: all 0.4s ease-in-out 0.1s}; ponieważ bez tego nie będzie efektu przejścia, a jedynie czerwone wskoczy na miejsce szarego*/
+/*odsuwa na hovera ikonę z pola widzenia - szare tło zostaje*/
+.tab:hover .social a:before {
+  margin-left: -100px;
+}
+
+/*wprowadza na hovera wcześniej odsuniętą z pola widzenia większą ikonę na czerwonym tle*/
+.tab:hover .social a:after {
+  margin-left: -5px;
+}
+
 .tab .content {
   background-color: #fff;
   width: 360px;
@@ -66,27 +85,36 @@ header h1 {
   padding-right: 30px;
 }
 
-.social a::before,
-.social a::after {
+/*stylizacja kontenera z lewej strony w którym znajdą się ikony -> defaultowo będzie czerwony z .youtube:after ale po
+dodaniu stylizacji w .social a:after pod spodem zostanie zastąpione szarym, aby animacja mogła wykonać przejście z szarego
+w czerwone (oraz powiększenia ikony) w momencie hovera*/
+.social a:before,
+.social a:after {
+  transition: all 0.4s ease-in-out 0.1s;
   width: 80px;
   height: 200px;
   position: absolute;
-  text-indent: 0s;
+  text-indent: 0;
   display: block;
   padding-top: 90px;
   padding-left: 25px;
+  font-size: 2rem;
   color: #fff;
-  background-color: #ff0000;
 }
 
-.youtube a::before,
-.youtube a::after {
-  font-family: "Font Awesome 5 Free";
+/*aby zmienić defaultowy kolor z czerwonego na szary - ustawiamy parametry powiększonej ikony i paddingów, odsuwamy margin-leftem całość na bok - w ten sposób defaultowo zostaje nam szary kolor tła i mniejsza ikona z wczesniejszej stylizacji*/
+.social a:after {
+  padding-top: 80px;
+  padding-left: 12px;
+  font-size: 3rem;
+  /*margin jest potrzebny aby wypchnąć powiększona ikonę z czerwonym tłem poza obszar widzenia (bez niego będziemy na starcie widzieli czerwone tło z powiększoną ikoną), wprowadzimy ją następnie przy użyciu animacji*/
+  margin-left: 85px;
+}
+
+.youtube a:before,
+.youtube a:after {
+   font-family: "Font Awesome 5 Brands";
    content: "\f167";
-   display: inline-block;
-   padding-right: 3px;
-   vertical-align: middle;
-   font-weight: 900;
 }
 
 .youtube a:after {
